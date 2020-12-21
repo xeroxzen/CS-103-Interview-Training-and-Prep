@@ -13,12 +13,12 @@ def longest_valid_paranthesis(str):
     >>> result_1
     2
     >>> s_2 = ")()())"
-    >>> result_2 = longest_valid_paranthesis(s_1)
+    >>> result_2 = longest_valid_paranthesis(s_2)
     >>> result_2
     4
     >>> s_3 = ""
 
-    >>> result_3 = longest_valid_paranthesis(s_1)
+    >>> result_3 = longest_valid_paranthesis(s_2)
     >>> result_3
     0
     """
@@ -36,7 +36,7 @@ def longest_valid_paranthesis(str):
             stack_list.append(i)
         else:
             if len(stack_list) != 0:
-                stack_list.pop() # delete the previous unmatched parenthesis
+                stack_list.pop()  # delete the previous unmatched parenthesis
             if len(stack_list) != 0:
                 count = max(count, i - stack_list[len(stack_list) - 1])
             else:
